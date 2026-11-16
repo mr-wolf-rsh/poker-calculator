@@ -11,7 +11,7 @@
   <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white">
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black">
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-  <img alt="Go" src="https://img.shields.io/badge/Go-planned-00ADD8?logo=go&logoColor=white">
+  <img alt="Go" src="https://img.shields.io/badge/Go-planned-9E9E9E?logo=go&logoColor=white">
 </p>
 
 ---
