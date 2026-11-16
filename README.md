@@ -19,44 +19,46 @@
 ## The exercise
 
 A round is one line of ten cards — the first five to player 1, the last five to player 2 — and
-standard poker hand ranking decides who takes the pot.
+standard poker hand ranking decides who takes the pot. The full contract (input format, ranking,
+tie-breakers, output shape) lives in [`spec.md`](spec.md).
 
 ```
 5H KS 9C 7D 9H  |  8D 3S 5D 5C AH
 └── player 1 ──┘    └── player 2 ──┘
 ```
 
-Strongest to weakest: straight flush · four of a kind · full house · flush · straight · three of
-a kind · two pair · one pair · high card. Ties break on the ranks involved, then the remaining
-cards; ace is high, and `A-2-3-4-5` counts as a straight.
-
 ## The seats
 
 ### 🔷 C#
-`C#` `xUnit`
+`C#` `.NET Core` `xUnit`
 
-A console implementation of the hand comparison, tested with **xUnit**.
+A console implementation on **.NET Core** (SDK 2.2.x), tested with **xUnit**. It prompts for the
+`pokerdata.txt` source and target directories, then prints each round's winner.
 
 **[Code](https://github.com/mr-wolf-rsh/poker-calculator-csharp)**
 
 ### ☕ Java
-`Java` `Maven` `JUnit`
+`Java 8+` `Maven` `JUnit`
 
-The same comparison built with Maven (Java 8 archetype), tested with **JUnit**.
+Built with **Maven** (Archetype Quickstart for Java 8, JDK 8+) and tested with **JUnit**. Run it
+from a real terminal — VS Code's Output Console can't take input — and it asks for the source and
+target directories.
 
 **[Code](https://github.com/mr-wolf-rsh/poker-calculator-java)**
 
 ### 🟨 JavaScript
-`Node.js` `Jest`
+`Node.js` `Jest` `esm`
 
-The comparison in Node.js, tested with **Jest** (ES modules through `esm`).
+**Node.js** (12.x) with ES modules via `esm` and **ESLint**, tested with **Jest**. Prompts for the
+source and target directories and writes the winner per round.
 
 **[Code](https://github.com/mr-wolf-rsh/poker-calculator-js)**
 
 ### 🐍 Python
-`Python` `Pipenv` `Pytest`
+`Python 3` `Pipenv` `Pytest`
 
-The comparison in Python, tested with **Pytest** inside a Pipenv environment.
+**Python 3** in a **Pipenv** environment, tested with **Pytest**. Prompts for the `pokerdata.txt`
+source and target directories.
 
 **[Code](https://github.com/mr-wolf-rsh/poker-calculator-python)**
 
@@ -67,10 +69,16 @@ The next seat at the table — empty until a working, tested implementation exis
 
 ---
 
-## Shared deck
+## How the set fits together
 
-[`fixtures/pokerdata.txt`](fixtures/pokerdata.txt) is the canonical input every implementation
-plays. Same deck, same result.
+- **The house** (this repo) — the problem, the [`spec.md`](spec.md) contract, and the shared deck
+  in [`fixtures/`](fixtures/).
+- **Each player** (an implementation repo) — the algorithm plus its own README and run commands.
+  Instructions are never duplicated here, because they differ per toolchain.
+- **Same deck, same result** — every implementation plays the shared hands and must call the same
+  winner. No house edge.
+- **Always room for one more** — each new language lands as its own repository, so the set stays
+  comparable instead of turning into one mixed codebase.
 
 ---
 
