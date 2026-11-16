@@ -27,6 +27,8 @@ tie-breakers, output shape) lives in [`spec.md`](spec.md).
 └── player 1 ──┘    └── player 2 ──┘
 ```
 
+In that round, player 1 takes it with a pair of nines; player 2 only holds a pair of fives.
+
 ## The seats
 
 ### 🔷 C#
